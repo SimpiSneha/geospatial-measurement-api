@@ -1,0 +1,20 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Placemark>
+      <name>Plot A</name>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>
+        78.4800,17.3800,0 78.4900,17.3800,0 78.4900,17.3900,0 78.4800,17.3900,0 78.4800,17.3800,0
+      </coordinates></LinearRing></outerBoundaryIs></Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Road 1</name>
+      <LineString><coordinates>78.4800,17.3800,0 78.4900,17.3900,0</coordinates></LineString>
+    </Placemark>
+    <Placemark>
+      <name>Gate</name>
+      <Point><coordinates>78.4850,17.3850,0</coordinates></Point>
+    </Placemark>
+  </Document>
+</kml>
