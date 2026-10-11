@@ -1,4 +1,3 @@
-
 from pathlib import Path
 
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, status
@@ -9,6 +8,7 @@ from app.database import get_db
 from app.models import File as FileRecord
 from app.models import new_id
 from app.schemas import FileOut
+from app.services.processing import process_file
 from app.services.storage import FileTooLarge, InvalidUpload, save_upload
 
 router = APIRouter(prefix="/api/files", tags=["files"])
@@ -32,5 +32,8 @@ def upload_file(file: UploadFile = FormFile(...), db: Session = Depends(get_db))
     )
     db.add(record)
     db.commit()
+    db.refresh(record)
+
+    process_file(db, record)
     db.refresh(record)
     return record
